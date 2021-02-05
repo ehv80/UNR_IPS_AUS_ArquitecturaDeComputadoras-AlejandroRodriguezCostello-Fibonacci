@@ -1,0 +1,869 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.73 [en] (Win98; U) [Netscape]"><title>Introduccion</title></head>
+
+<body>
+
+<h1>
+Introducción</h1>
+
+<center>
+<h1>
+Contenido<br>
+&nbsp; <b><font size="+0"><a href="#algoritmo">¿Qué es un Algoritmo?</a></font></b></h1></center>
+
+<center><b><font size="+0">&nbsp;&nbsp;&nbsp; <a href="#Ejemplos">Ejemplos
+de Algoritmos</a></font></b>
+<br><b><font size="+0"><a href="#MULTIPLICACION">Multiplicación</a>
+
+<a href="#Euclides">El Algoritmo de Euclides</a></font></b>
+<br><b><font size="+0"><a href="#Fibonacci">Los Números de Fibonacci;</a>
+
+<a href="#Recursivo_Fibonacci">Un Algoritmo Recursivo</a></font></b>
+<br><a href="#MULTIPLICACION">MULTIPLICACION DE DOS NUMEROS</a>
+<br><b><font size="+0"><a href="#An%E1lisis">¿Análisis de Algoritmos
+o Algoritmia?</a></font></b>
+<br><b><font size="+0"><a href="#REFERENCIAS">Referencias</a></font></b></center>
+
+<p><br>
+</p><h1>
+<font size="+2">Regresar</font></h1>
+<b><font size="+2">Análisis de Algoritmos</font></b>
+<h1>
+
+<hr></h1>
+
+<h1>
+<a name="algoritmo"></a>¿Qué es un Algoritmo?</h1>
+<b>&nbsp;&nbsp;&nbsp; </b><i>Un algoritmo es un conjunto finito de pasos
+para resolver un problema.</i>
+<ul>
+<ul>
+<li>
+Cada uno de los pasos podrán requerir una ó más operaciones.</li>
+
+<li>
+Es totalmente claro lo que el algoritmo debe hacer. De esta manera no se
+permiten ambigüedades en las operaciones.</li>
+</ul>
+</ul>
+Lo anterior no significa que no se permitan operaciones sobre variables
+aleatorias.
+<p><b>características:</b>
+</p><ul>
+<li>
+Cada operación debe ser efectiva, es decir debe poder ser realizada
+por un dispositivo (una persona o una máquina) en una cantidad finita
+de tiempo.</li>
+
+<li>
+Un algoritmo produce una ó mas salidas.</li>
+
+<li>
+Un algoritmo puede tener cero ó más entradas proporcionadas
+externamente.</li>
+</ul>
+<a name="Ejemplos"></a><b>Ejemplos de Algoritmos</b>:
+<br>&nbsp;
+<blockquote><a name="MULTIPLICACION"></a>MULTIPLICACION DE DOS NUMEROS</blockquote>
+
+<p><br>&nbsp;<b>Multiplicación clásica:</b>
+</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+981&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+981&nbsp;&nbsp;&nbsp;&nbsp; -&gt; Multiplicando
+<br>&nbsp;&nbsp;&nbsp;
+1234&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1234&nbsp;&nbsp;&nbsp; -&gt; multiplicador
+<br>&nbsp;&nbsp;&nbsp;
+____&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+_________
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+3924&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+981
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2943&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1962
+<br>&nbsp;&nbsp;&nbsp;
+1962&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2943
+<br>&nbsp;&nbsp;&nbsp;
+981&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+3924
+<br>&nbsp;
+______&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+_________
+<br>&nbsp;
+1210554&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1210554
+</p><p>MULTIPLICACION A LA RUSSE
+</p><p>Este algoritmo tiene la ventaja que no requiere tablas y puede ser ideal
+en la programación de microprocesadores. El algoritmo de multiplicación
+a la russe sigue los siguientes pasos:
+</p><p>PASO 1:&nbsp;&nbsp;&nbsp; Se hacen dos columnas, una debajo de cada
+operando
+<br>PASO 2:&nbsp;&nbsp;&nbsp; Se repite la siguiente regla hasta que el
+número de la izquierda sea 1:
+</p><ul>
+<ul>
+<ul>
+<li>
+&nbsp;Se divide el número de la columna de la izquierda por 2, ignorando
+el residuo</li>
+
+<li>
+&nbsp;Se duplica el número de la derecha</li>
+
+<li>
+Se tachan todas las filas en las cuales el número de la izquierda
+sea par</li>
+
+<li>
+Se suman los números que quedan en la columna de la derecha</li>
+</ul>
+</ul>
+</ul>
+Un algoritmo para la multiplicación a la russe es el siguiente:
+<p>funcion russe (m,n)
+<br>resultado = 0
+<br><b>REPITE</b>
+<br>&nbsp;&nbsp;&nbsp; <b>IF</b> m es impar <b>THEN</b> resultado = resultado
++ n
+<br>&nbsp;&nbsp;&nbsp; else
+<br>&nbsp;&nbsp;&nbsp; m = m/2
+<br>&nbsp;&nbsp;&nbsp; n = n/2
+<br><b>HASTA</b> m= 1
+<br><b>RETURN</b> resultado
+</p><p><b>MULTIPLICACION POR PARES</b>
+</p><p>El siguiente algoritmo tampoco requiere tablas y tiene las siguientes
+características.
+<br>&nbsp;
+</p><ul>
+<li>
+Se requiere que el multiplicando y el multiplicador tengan el mismo número
+de cifras.</li>
+
+<li>
+El multiplicador debe ser una potencia a la n (0,1,2..) de dos, es decir
+1, 2,4,6,8,..</li>
+</ul>
+Se ilustra el algoritmo otro vez con los números 981 y 1234 (el
+primero se toma como 0981 por la primera condición). Para multiplicar
+estos números se procede como sigue:
+<ul>
+<li>
+se toma primero la mitad izquierda y la mitad derecha (09, 12) su producto
+se escribe en resultado (108)</li>
+
+<ul>
+<li>
+&nbsp;&nbsp;&nbsp; Se desplaza hacia la izquierda tantas veces como cifras
+haya en el multiplicador (4)</li>
+</ul>
+
+<li>
+Se multiplica la mitad izquierda del multiplicando por la mitad derecha
+del multiplicador (09, 34),</li>
+
+<ul>
+<li>
+Se desplaza ha la izquiered la mitad de cifras del multiplicador (2)</li>
+</ul>
+
+<li>
+Multiplicamos la mitad derecha del multiplicando (81) por la mitad izquierda
+del multiplicador (23)</li>
+
+<ul>
+<li>
+Se dezplaza la mitad de cifras que haya en el multiplicador (2)</li>
+</ul>
+
+<li>
+Multiplicamos la mitad derecha del multiplicando por la mitad derecha del
+multiplicador (34) es decir 2754</li>
+
+<ul>
+<li>
+No se dezplaza</li>
+</ul>
+</ul>
+
+<br>&nbsp;
+<br>&nbsp;
+<table border="1" cols="9" width="100%">
+<tbody><tr>
+<td>operación</td>
+
+<td>8</td>
+
+<td>7</td>
+
+<td>6</td>
+
+<td>5</td>
+
+<td>4</td>
+
+<td>3</td>
+
+<td>2</td>
+
+<td>1</td>
+</tr>
+
+<tr>
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td>0</td>
+
+<td>9</td>
+
+<td>8</td>
+
+<td>1</td>
+</tr>
+
+<tr>
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td>1</td>
+
+<td>2</td>
+
+<td>3</td>
+
+<td>4</td>
+</tr>
+
+<tr>
+<td><b>09 x 12</b></td>
+
+<td></td>
+
+<td>1</td>
+
+<td>0</td>
+
+<td><b>8</b></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td><b>09 x 34</b></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td>3</td>
+
+<td><b>0</b></td>
+
+<td><b>6</b></td>
+
+<td></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td><b>81 x 12</b></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td><b>9</b></td>
+
+<td><b>7</b></td>
+
+<td><b>2</b></td>
+
+<td></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td><b>81 x 34</b></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td><b>2</b></td>
+
+<td><b>7</b></td>
+
+<td><b>5</b></td>
+
+<td><b>4</b></td>
+</tr>
+
+<tr>
+<td><b>total</b></td>
+
+<td></td>
+
+<td><b>1</b></td>
+
+<td><b>2</b></td>
+
+<td><b>1</b></td>
+
+<td><b>0</b></td>
+
+<td><b>5</b></td>
+
+<td><b>5</b></td>
+
+<td><b>4</b></td>
+</tr>
+</tbody></table>
+
+<p><a name="Euclides"></a><b>ALGORITMO DE EUCLIDES</b>
+</p><p>Uno de los procedimientos más viejos, que se ajusta a la definición
+de algoritmos, es el de Euclides para encontrar el máximo común
+divisor de dos enteros positivos, el cual se describe a continuación:
+</p><p>Procedure Maximo Comun Divisor (m,n, MAX)
+</p><p><i>** Encuentra el máximo común divisor de dos números
+enteros dados m,n, ***</i>
+<br><i>** donde n es menor o igual que m ***********************************</i>
+<br><i>** Max es el Máximo Común Divisor de m,n ***************************</i>
+</p><p>Input:&nbsp;&nbsp;&nbsp; enteros positivos m,n
+<br>Output:&nbsp;&nbsp;&nbsp; Max
+</p><p>Begin
+<br>&nbsp;&nbsp;&nbsp; While n N.E. 0&nbsp; DO
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TEMP = m mod n
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m&nbsp; = n
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; n&nbsp; = temp
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MAX = m
+<br>&nbsp;&nbsp;&nbsp; End DOWhile
+<br>End
+</p><p>Nótese que este algortimo está escrito en seudocódigo,
+es decir no usamos la sintaxis de ningún lenguaje de programación
+en particular. La cuestión es que un algoritmo es también
+delinear una idea sobre como realizar un programa. Los algoritmos se expresan
+por lo regular en seudocodigo que es es algo que se parece a lenguajes
+de programación como C, Pascal. Java o Fortran pero con algunas
+instrucciones en nuestro lenguaje (español por ejemplo). En seudocódigo
+no hay preocupaciones por la sintaxis y no se entra en detalle en la manera
+como se deben programar el programa final. Lo que esperamos del seudocódigo
+es que podamos traducirlo fácilmente en&nbsp; lineas de código
+del programa real; esperamos también que dicha labor sea facil y
+más o menos mecánica.
+</p><p>Volviendo al algoritmo presentado con anterioridad, nótese que
+no se presenta en el detalles de implementación como declaración
+de variables, ni verificación de condiciones, de esta forma, en
+este algoritmo no se verifica si n es menor o igual que m ni su declaración
+como variables, aunque desde luego estas cosas se pueden incluir si se
+desean (ver por ejemplo los algoritmos de números de Fibonacci más
+adelante).
+</p><p>La razón de lo anterior se debe a que cuando uno empieza a escribir
+un programa de software, lo que uno de veras está haciendo es implementar
+un método de solución de problemas el cual está previamente
+diseñado, sino en papel, por lo menos en nuestra mente. Este método
+es por regla general independiente de la computadora que se use y, por
+lo regular, independiente del lenguaje de programación. Es conveniente
+analizar el método y no el programa de computación para saber
+como el problema está siendo abordado y&nbsp; las propiedades que
+dicho método presenta. Estas propiedades, buenas o malas, serán
+heredadas inevitablemente por el programa en cuestión. Es razonable
+pensar que no es posible obtener un buen programa si no se cuenta antes
+con un buen método.
+</p><p><a name="Fibonacci"></a>Los números de Fibonacci
+</p><p>Leonardo de Pisa, conocido tambien como Fibonacci, estuvo interesado
+en un problema conocido como Dinámica de Poblaciones y que tiene
+que ver con que tan rapido crece o se extingue un cierto tipo de especie.
+Por ejemplo, cuando los conejos fueron introducidos en Australia, casi
+acaban con algunas especies nativas al entrar en competencia por cierto
+tipo de vegetales. Los europeos introdujero entonces una especie de perros
+muy habiles para cazar conejos, los dingo, la cual controló la explosión
+de conejos pero son un peligro para la sobrevivencia de otros animales
+nativos de Australia. Analicemos en forma un problema muy simplificado
+de dinamica poblacional de conejos. Para ello consideremos que es factible
+un experimento donde se tiene al inicio un par de conejos recien nacidos
+y donde se cumplen&nbsp; las siguientes consideraciones:
+<br>&nbsp;
+</p><ul>
+<li>
+Un par de conejos tiene un par de conejos cada año.</li>
+
+<li>
+Los conejos solo pueden tener conejos hasta que tengan dos años
+de edad.</li>
+
+<li>
+Los conejos nunca mueren</li>
+</ul>
+Podemos expresar el número de pares de conejos como una función
+del tiempo, medida a partir de que el experimento se inicia. Empezaremos
+a medir a partir de 1, de manera que la cantidad de conejos al inicio del
+primer año será F(1), es decir 1 (la pareja inicial de conejos);
+un año después tendremos F(2) pares de conejos, es decir
+1, ya que los conejos se pueden reproducir hasta hasta los dos años
+de edad. Esta función continua entonces incrementándose como
+se muestra en la siguiente tabla:
+<br>&nbsp;
+<br>&nbsp;
+<table border="1" cols="3" width="100%">
+<tbody><tr>
+<td>
+<center>Año
+<br>n</center>
+</td>
+
+<td>
+<center>F(n) = Número de Pares de Conejos</center>
+</td>
+
+<td>
+<center>Comentarios</center>
+</td>
+</tr>
+
+<tr>
+<td>
+<center>1</center>
+</td>
+
+<td>
+<center>1</center>
+</td>
+
+<td>
+<center>Se inicia el experimento con un par de conejos, que llamaremos
+Adán y Eva. Como la era cristiana empezamos a contar el año
+cero como el uno!!</center>
+</td>
+</tr>
+
+<tr>
+<td>
+<center>2</center>
+</td>
+
+<td>
+<center>1</center>
+</td>
+
+<td>
+<center>En el primer año, Adán y Eva son muy jovenes para
+tener familia. Son casi unos cachorritos juguetones!!</center>
+</td>
+</tr>
+
+<tr>
+<td>
+<center>3</center>
+</td>
+
+<td>
+<center>2</center>
+</td>
+
+<td>
+<center>Adán y Eva son papás!!
+<br>Estamos en el segundo año de iniciado el experimento y tenemos:</center>
+
+<li>
+Adán y Eva</li>
+
+<li>
+Primer Par nacido en el experimento</li>
+</td>
+</tr>
+
+<tr>
+<td>
+<center>4</center>
+</td>
+
+<td>
+<center>3</center>
+</td>
+
+<td>
+<center>Adán y Eva son otra vez papás!!
+<p>Ahora tenemos:</p></center>
+
+<ul>
+<li>
+Adán y Eva</li>
+
+<li>
+Primer par&nbsp;</li>
+
+<li>
+Segundo par</li>
+</ul>
+</td>
+</tr>
+
+<tr>
+<td>
+<center>5</center>
+</td>
+
+<td>
+<center>5</center>
+</td>
+
+<td>
+<center>Nuestro primer par de conejos son ahora abuelos y son otra vez
+papás!!!
+<p>Ahora tenemos:</p></center>
+
+<ul>
+<li>
+Adán y EvaDos</li>
+
+<li>
+Primer par</li>
+
+<li>
+Segundo par</li>
+
+<li>
+Dos pares nuevos&nbsp;</li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+
+<p>La función general de F(n) es calculada como sigue. Dado que
+en el año n todos los conejos del período previo aún
+estan vivos tendremos que contar primero F(n-1) y tendremos que sumar un
+par de conejos por cada par de conejos que hayamos tenido dos años
+antes, es decir tendremos que sumar F(n-2). De esta manera el número
+de conejos en el año n se encuentra con la función de Fibonacci:
+</p><p>&nbsp;&nbsp;&nbsp; F(n)= F(n-1) +F(n-2)&nbsp;&nbsp;&nbsp;&nbsp; .......(1)
+</p><p>El problema ahora es cómo calcular esta función. Una posibilidad
+es calcular la función de Fibonacci con la siguiente aproximación:
+</p><p>F(n) = [x <sup>n </sup>-(1-x) <sup>n</sup>) ] / [x- (1-x)]&nbsp;&nbsp;&nbsp;&nbsp;
+.................(2)
+</p><p>donde x&nbsp; se conoce como la relación de la sección
+dorada, misma que fué encontrada por Leonardo Da Vinci. Esta relación
+es:
+</p><p>x= [1 + sqrt(5)]/2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ............(3)
+<br>&nbsp;&nbsp;&nbsp; = 1.618..
+</p><p>Según Leonardo Da Vinci, la relación dorada la preservan
+las cosas perfectas y bellas (por ejemplo la proporción de la ubicación
+de los ojos en la cara, la relación del tamaño de la cabeza
+con relación al resto del cuerpo, etc). Fué tal su impacto,
+que hasta la fecha hay investigadores que utilizan dicha relación
+en problemas de optimización combinatoria complejos.
+</p><p><a name="Recursivo_Fibonacci"></a><b>Un Algoritmo Recursivo para los
+números de Fibonacci</b>
+<br>Un problema con la formula (2) es que produce resultados aproximados
+tipo real, mientras que el número de conejos es un número
+entero.&nbsp; Para números pequeños no es un problema, sin
+embargo, conforme n se incrementa, los errores de los cálculos previos
+se incrementan notablemente, ya que en la fórmula se incluyen los
+dos períodos previos. Ora posibilidad es tratar F(n) como un número
+entero y utilizar un algoritmo recursivo donde participen F(n-1) y F(n-2)
+como sigue:
+</p><p><b>Procedure Fibonacci Recursivo</b>
+</p><p>1&nbsp;&nbsp;&nbsp; begin Fibonacci
+<br>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+**** Fibonacci (n) es un número entero ***********
+<br>3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+<br>4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IF (n&nbsp; .LE.
+2) return 1
+<br>5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else
+return fibonacci (n-1) + fibonacci (n-2)
+<br>&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+<br>&nbsp;7&nbsp;&nbsp; end fibonacci
+</p><p><a name="Análisis"></a><b><font size="+0">¿Análisis de Algoritmos
+o Algoritmia?</font></b>
+</p><p>El nombre de Análisis de Algoritmos se ha empleado durante mucho
+tiempo en América, sin embargo, recientemente se ha empleado tambien
+el nombre de Algoritmia, nombre impulsado principalmente en España.
+[Brassard &amp; Bratley] definen Algoritmia como el estudio de los algoritmos.
+Es muy probable que las aguas tomen su nivel y finalmente el nombre de
+Análisis de Algoritmos persista. Sólo el tiempo nos dará
+la respuesta.
+</p><h1>
+<a name="criterios"></a><b><font size="+0">¿Qué criterios se
+tienen para el Análisis de Algoritmos?</font></b></h1>
+<font size="+0">Existen varios criterios para el análisis de algoritmos,
+sin embargo, el tiempo de ejecución es uno de los más usados.
+Sin embargo, surge una pregunta, ¿como medimos dicho tiempo? Una
+respuesta natural sería medirlo en segundos, no obstante, nos gustaría
+una respuesta que no cambiara conforme la tecnología cambia y surge
+una nueva generación de computadoras. Una mejor manera es medir
+el tiempo en terminos de instrucciones de máquina, de forma que
+tomando la velocidad de la máquina en que se piense ejecutar el
+algoritmo, obtengamos la velocidad en segundos. Esto se puede hacer si
+se considera la fórmula:</font>
+<p><font size="+0">Tiempo en segundos&nbsp;&nbsp;&nbsp; = Tiempo virtual/Velocidad
+de la máquina&nbsp;&nbsp;&nbsp; ...(4)</font>
+</p><p><font size="+0">Donde :</font>
+</p><p><font size="+0">Tiempo virtual = t(n)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Número de instrucciones</font>
+<br><font size="+0">Velocidad de máquina&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Número de instrucciones/
+segundo</font>
+</p><p><font size="+0">Sin embargo, es bastante engorroso calcular el número
+exacto de instrucciones que generará un compilador para&nbsp; una
+pieza de código. Por tal&nbsp; motivo, se puede utilizar una medida
+aproximada en terminos de líneas de código.</font>
+</p><p><font size="+0">En el caso de el algoritmo de Fibonacci recursivo, cada
+llamada a Fibonacci regresa una o dos líneas, ya que si n es menor
+o igual que 2, se ejecuta una línea (sólo el IF/RETURN).
+Sí por el contrario, cuando n&nbsp; es mayor o igual que 3 se ejecutan
+cuatro. como se obseva a continuación:</font>
+<br>&nbsp;
+<br>&nbsp;
+<table border="1" cols="4" width="100%">
+<tbody><tr>
+<td>
+<center>n</center>
+</td>
+
+<td>
+<center>F(n)</center>
+</td>
+
+<td>
+<center># de líneas</center>
+</td>
+
+<td>
+<center>Comentarios</center>
+</td>
+</tr>
+
+<tr>
+<td>
+<center>0</center>
+</td>
+
+<td>
+<center>F(0)</center>
+</td>
+
+<td>
+<center>1</center>
+</td>
+
+<td>
+<center>Se ejecuta solo la línea 4</center>
+</td>
+</tr>
+
+<tr>
+<td>
+<center>1</center>
+</td>
+
+<td>
+<center>F(1)</center>
+</td>
+
+<td>
+<center>1</center>
+</td>
+
+<td>
+<center>Se ejecuta sólo la línea 4</center>
+</td>
+</tr>
+
+<tr>
+<td>
+<center>2</center>
+</td>
+
+<td>
+<center>F(2)</center>
+</td>
+
+<td>
+<center>1</center>
+</td>
+
+<td>
+<center>Se ejecutan solo la línea 4</center>
+</td>
+</tr>
+
+<tr>
+<td>
+<center>3</center>
+</td>
+
+<td>
+<center>F(3)</center>
+</td>
+
+<td>
+<center>4</center>
+</td>
+
+<td>
+<ul>
+<li>
+La linea 4 para comparar n con 2</li>
+
+<li>
+La línea 5 para sumar f(2)+F(1)</li>
+
+<li>
+Una línea para calcular F(2)</li>
+
+<li>
+Una línea para calcular F(1)</li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+
+</p><p><font size="+0">De esta forma el tiempo t(n) del algoritmo es:</font>
+<br>&nbsp;
+</p><p><font size="+0">t(n)&nbsp;&nbsp;&nbsp; = t(n-1) + t(n-2) + 2&nbsp;&nbsp;&nbsp;
+...(5)</font>
+</p><p><font size="+0">es decir, t(n) se comporta de manera similar a la forma
+como el número de conejos crece.</font>
+</p><p><font size="+0">En general, para cualquier algoritmo recursivo, se obtiene
+una relación de recurrencia&nbsp; de manera que el tiempo para cualquier
+rutina es el tiempo dentro de la rutina misma má el tiempo para
+las llamadas recursivas. Dicha relación permite una forma mecánica
+de determinar una ecuación como la (5) que permita resolverla para
+encontrar el tiempo de ejecución.&nbsp;&nbsp; Esta ecuación
+puede ser un poco dificil de resolver. Una forma de hacerlo es a través
+de un árbol ccolocando en el nodo raiz, el que deseamos calcular.
+Tomemos por ejemplo F(5):</font>
+</p><p><font size="+0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+F(5)</font>
+<br><font size="+0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</font>
+<br><font size="+0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; F(4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+F(3)</font>
+<br><font size="+0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+\</font>
+<br><font size="+0">&nbsp;&nbsp;&nbsp; F(3)&nbsp;&nbsp;&nbsp; F(2)&nbsp;
+F(2)&nbsp;&nbsp;&nbsp; F(1)</font>
+<br><font size="+0">&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp; \</font>
+<br><font size="+0">F(2) F(1)</font>
+</p><p>Nótese que a los nodos internos les lleva dos instrucciones cada
+uno, mientras que para los nodos hoja solo 1 por cada uno. De esta manera
+como el árbol para F(5) tiene 4 nodos internos y 5 hojas, el número
+de líneas será de 13. Note también que para cada nodo
+interno, el número de líneas es justamente el número
+de hojas abajo de este nodo.
+</p><p>El árbol para F(n) tiene propiedades que pueden ayudad a contar
+el número de lineas.
+</p><ul>
+<li>
+El número de hojas en el árbol es justamente F(n)</li>
+
+<li>
+El número de nodos internos es siempre igual al número de
+hojas menos uno.</li>
+</ul>
+Como consecuencia F(n) líneas se ejecutan en las hojas y 2[F(n-2)-1]
+es decir:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t(n) = F(n) + 2F(n-2) -2&nbsp;&nbsp;&nbsp;
+....(6)
+<p><b>&nbsp; </b>El tiempo empleado para este algoritmo recursivo puede
+ser muy grande, por ejemplo, cuando n es del orden de cuarenta,se pueden
+requerir varios miles de millones de pasos!!!. Es por esta razón
+que los ingenieros de software prohiben al maximo las rutinas recursivas.
+</p><p><b>Algoritmo de Fibonacci No-Recursivo</b>
+</p><p>La razón por la que el algoritmo de fibonacci recursivo es tan
+lento es que se recalculan funciones que ya se habían calculado
+antes. Una manera de evitar esto es a través de rutinas iterativo
+o No-recursivas como la siguiente:
+</p><p>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Procedure Fibonacci No_Recursivo
+<br>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Begin
+<br>3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *** Se
+Cálcula el número de fibonacci (n)&nbsp; en la función
+f(n) ****
+<br>4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{
+<br>5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+** la función f(n) es entera&nbsp;&nbsp;&nbsp; ****************************
+<br>6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+f[1] = f[2]= 1;
+<br>7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+for (i =3; i .LE. n; n+1)
+<br>8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+f[i]&nbsp;&nbsp;&nbsp; = f[i-1]+f[i-2];
+<br>9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+end for
+<br>10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+return f(n)
+<br>11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+<br>12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End Fibonacci No_Recursivo
+</p><p>En este algoritmo hay tres líneas que se ejecutan siempre, que
+son la 6, la 7 y la 8, sin importar cual sea el valor de n. Se puede deducir
+que la línea 7 se ejecuta n-1 veces (excepto para valores iguales
+o inferiores a 2), mientras que la línea 8 lo hace n-2 veces. De
+esta forma se tiene un formula general del tiempo de la rutina de fibonacci
+no-recursiva, excepto para valores menores o iguales a 2:
+<br>&nbsp;
+</p><p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t(n) = n-1 + n-2 + 3 =
+2n</b>
+</p><p>Para n = 40, se tendrá que el valor de t(n) no es ni siquiera
+igual a 100, lo que significa que la rutina no-recursiva es al menos un
+millón de veces más rápida que la recursiva, sin importar
+la máquina utilizada.
+</p><p><b>TAREA</b>
+</p><p>1. Escribir un algoritmo para cada método de multiplicación
+dado en el texto, determinar cuál de ellos es más eficiente.
+Argumentar la respuesta.
+<br>2. Probar computacionalmente las dos versiones algoritmicas que calulen
+los número de Fibonacci&nbsp; (recursiva y no recursiva). Elaborar
+casos de prueba que justifiquen que una es más eficiente que la
+otra.
+</p><p>En ambos casos elaborar gráficas que muestren que un algoritmo
+es mejor que sus competidores.
+<br>&nbsp;
+</p><ul>&nbsp;</ul>
+<a name="REFERENCIAS"></a>REFERENCIAS
+<p>[KNUTH] D. Knuth, The Art of Computer Programming, Addison-Wesley. Volume
+1, Fundamental Algorithms, 2nd edition, 1973. Volume 2, Seminumerical Algorithms.
+Volume 3, Sorting and Searching.
+<br>[Horowitz] E. Horowiz, Sartaj Sahni, Fundamentals of Computer Algorithms,
+Computers Science Press.
+<br>[WEBSTER] Webster Dictionary.
+<br>[Brassard &amp; Bratley] Fundamentos de Algoritmia, Prentice Hall,
+1997
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+</p></body></html>
